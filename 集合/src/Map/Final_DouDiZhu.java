@@ -94,7 +94,15 @@ public class Final_DouDiZhu {
             slast.add(map.get(key));
         }
 
-        //4.看牌
+        /*
+        * 4.看牌
+        *
+        * [4♠, 5♠, 6♥, 6♣, 7♠, 7♦, 8♠, 9♠, 9♣, J♥, J♣, Q♣, Q♦, 1♥, 2♦, 小王, 大王]
+        * [3♠, 3♦, 4♥, 4♦, 5♦, 6♦, 7♥, 7♣, 8♥, 8♦, 9♥, 9♦, 10♣, K♣, 1♠, 2♠, 2♣]
+        * [3♥, 3♣, 5♥, 5♣, 6♠, 8♣, 10♠, 10♥, 10♦, J♠, J♦, Q♠, Q♥, K♠, K♦, 1♣, 1♦]
+        * [K♥, 2♥, 4♣]
+        *
+        * */
         System.out.println(splayer1);
         System.out.println(splayer2);
         System.out.println(splayer3);
