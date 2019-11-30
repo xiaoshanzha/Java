@@ -1,6 +1,8 @@
 package BigNumber;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Collection;
 
 /*
 * 超级大型的浮点数据,提供高精度的浮点运算, BigDecimal
