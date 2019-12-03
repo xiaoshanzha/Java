@@ -113,6 +113,68 @@ private void fastRemove(Object[] es, int i) {
 
 
 #### 迭代操作
+1. 迭代器接口Iterable
+```java
+public interface Iterable<T> {
+    //Iterable接口实现了iterator方法，返回Iterator对象
+    Iterator<T> iterator();
+
+
+    default void forEach(Consumer<? super T> action) {
+        Objects.requireNonNull(action);
+        Iterator var2 = this.iterator();
+
+        while(var2.hasNext()) {
+            T t = var2.next();
+            action.accept(t);
+        }
+
+    }
+}
+
+
+* Iterable表示对象可以被迭代，有一个iterator()方法，返回Iterator对象，通过Iterator接口中的方法进行遍历。
+
+//Iterator接口
+public interface Iterator<E> {
+    //判断是否还有元素未访问
+    boolean hasNext();
+
+    // next()返回下一个元素
+    E next();
+
+    //删除最后返回的元素
+    default void remove() {
+        throw new UnsupportedOperationException("remove");
+    }
+
+    default void forEachRemaining(Consumer<? super E> action) {
+        Objects.requireNonNull(action);
+        while(this.hasNext()) {
+            action.accept(this.next());
+        }
+    }
+}
+
+```
+2. ArrayList中迭代(实现了Iterable的接口)
+```java
+//ArrayList 中foreach语法
+for(Integer a : intList)
+{    
+    System.out.println(a); 
+}
+
+
+//foreach语法背后的实现
+Iterator<Integer> it = intList.iterator(); 
+while(it.hasNext()){    
+    System.out.println(it.next()); 
+}
+
+```
+
+
 
 #### 实现的接口(Collection、List、RandAccess)
 ```java
